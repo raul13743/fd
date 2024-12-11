@@ -1,0 +1,181 @@
+    <!DOCTYPE html>
+    <html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>NeuroStep - Contacto</title>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+        <style>
+            body {
+                background: linear-gradient(135deg, #121212, #1e1e1e);
+                font-family: 'Arial', sans-serif;
+                color: #e0e0e0;
+            }
+            .contact-section {
+                backdrop-filter: blur(10px);
+                background-color: rgba(30, 30, 30, 0.7);
+            }
+            .input-field {
+                background-color: rgba(50, 50, 50, 0.5);
+                border: 1px solid #4a4a4a;
+                color: #e0e0e0;
+                transition: all 0.3s ease;
+            }
+            .input-field:focus {
+                outline: none;
+                border-color: #8b5cf6;
+                box-shadow: 0 0 15px rgba(139, 92, 246, 0.3);
+            }
+            .hover-glow {
+                transition: all 0.3s ease;
+            }
+            .hover-glow:hover {
+                transform: scale(1.05);
+                box-shadow: 0 0 20px rgba(139, 92, 246, 0.5);
+            }
+            .contact-info-card {
+                perspective: 1000px;
+                transition: transform 0.5s;
+            }
+            .contact-info-card:hover {
+                transform: rotateY(10deg);
+            }
+        </style>
+        
+    </head>
+    <body>
+        <div class="container mx-auto grid md:grid-cols-1 gap-8">
+            
+            <!-- Formulario de Contacto -->
+            <div class="contact-section p-8 rounded-lg">
+                <h2 class="text-4xl font-bold mb-6 text-center text-purple-400">Contacta con NeuroStep</h2>
+                <form id="contactForm" class="space-y-6">
+                    
+                    <!-- Campos de Nombre -->
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <input type="text" id="firstName" placeholder="Nombre" required 
+                            class="input-field w-full p-3 rounded bg-gray-800 border border-gray-700">
+                        <input type="text" id="lastName" placeholder="Apellido" required 
+                            class="input-field w-full p-3 rounded bg-gray-800 border border-gray-700">
+                    </div>
+
+                    <!-- Campo de Correo -->
+                    <input type="email" id="email" placeholder="Correo Electrónico" required 
+                        class="input-field w-full p-3 rounded bg-gray-800 border border-gray-700">
+                    
+                    <!-- Campo de Teléfono -->
+                    <input type="tel" id="phone" placeholder="Teléfono (Opcional)" 
+                        class="input-field w-full p-3 rounded bg-gray-800 border border-gray-700">
+
+                    <!-- Motivo de Contacto -->
+                    <select id="reason" class="input-field w-full p-3 rounded bg-gray-800 border border-gray-700">
+                        <option value="">Motivo de Contacto</option>
+                        <option value="support">Soporte Técnico</option>
+                        <option value="sales">Consulta de Ventas</option>
+                        <option value="custom">Diseño Personalizado</option>
+                        <option value="other">Otros</option>
+                    </select>
+
+                    <!-- Mensaje -->
+                    <textarea id="message" placeholder="Tu Mensaje" required 
+                        class="input-field w-full p-3 rounded bg-gray-800 border border-gray-700 h-32"></textarea>
+
+                    <!-- Política de Privacidad -->
+                    <div class="flex items-center">
+                        <input type="checkbox" id="privacyPolicy" class="mr-2">
+                        <label for="privacyPolicy" class="text-sm text-gray-400">
+                            Acepto la política de privacidad
+                        </label>
+                    </div>
+
+                    <!-- Botón de Enviar -->
+                    <button type="submit" 
+                        class="w-full bg-purple-600 text-white p-3 rounded hover:bg-purple-700 transition-all hover-glow">
+                        Enviar Mensaje
+                    </button>
+                </form>
+            </div>
+
+            <!-- Información de Contacto -->
+            <div class="space-y-6">
+
+                <!-- Teléfono -->
+                <div class="contact-info-card bg-gray-800 p-6 rounded-lg hover:bg-gray-700 transition-all">
+                    <div class="flex items-center mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-400 mr-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1c-8.837 0-16-7.163-16-16V5z" />
+                        </svg>
+                        <h3 class="text-2xl font-bold text-white">Teléfono</h3>
+                    </div>
+                    <p class="text-gray-400">+34 666 777 888</p>
+                    <p class="text-gray-400">Lunes a Viernes: 9:00 - 18:00</p>
+                </div>
+
+                <!-- Correo -->
+                <div class="contact-info-card bg-gray-800 p-6 rounded-lg hover:bg-gray-700 transition-all">
+                    <div class="flex items-center mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-400 mr-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                        <h3 class="text-2xl font-bold text-white">Correo</h3>
+                    </div>
+                    <p class="text-gray-400">soporte@neurostep.com</p>
+                    <p class="text-gray-400">ventas@neurostep.com</p>
+                </div>
+
+                <!-- Dirección -->
+                <div class="contact-info-card bg-gray-800 p-6 rounded-lg hover:bg-gray-700 transition-all">
+                    <div class="flex items-center mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-400 mr-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                        <h3 class="text-2xl font-bold text-white">Dirección</h3>
+                    </div>
+                    <p class="text-gray-400">Calle Tecnología, 42</p>
+                    <p class="text-gray-400">08001 Barcelona, España</p>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Script para validación de formulario -->
+        <script>
+            document.getElementById('contactForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Validaciones básicas
+                const firstName = document.getElementById('firstName').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const message = document.getElementById('message').value.trim();
+                const privacyPolicy = document.getElementById('privacyPolicy').checked;
+
+                // Validación de campos obligatorios
+                if (!firstName || !email || !message) {
+                    alert('Por favor, rellene todos los campos obligatorios');
+                    return;
+                }
+
+                // Validación de política de privacidad
+                if (!privacyPolicy) {
+                    alert('Debe aceptar la política de privacidad');
+                    return;
+                }
+
+                // Validación de correo electrónico
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(email)) {
+                    alert('Por favor, introduzca un correo electrónico válido');
+                    return;
+                }
+
+                // Simulación de envío de formulario
+                alert('¡Mensaje enviado con éxito! Nos pondremos en contacto pronto.');
+                
+                // Limpiar formulario
+                this.reset();
+            });
+        </script>
+
+    </body>
+    </html>

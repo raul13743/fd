@@ -1,0 +1,183 @@
+/* Estilos generales del cuerpo */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; /* Fondo gris claro */
+}
+
+/* Estilos del encabezado */
+header {
+    background-color: #ffffff; /* Fondo oscuro */
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Estilos del logo */
+.logo img {
+    max-width: 150px; /* Tamaño máximo del logo */
+}
+
+/* Estilos de la barra de navegación */
+nav {
+    background-color: #444; /* Fondo gris oscuro */
+    padding: 10px;
+    text-align: center;
+}
+
+/* Estilo de los enlaces de la navegación */
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none; /* Quita subrayado */
+    transition: text-decoration 0.3s; /* Transición para el subrayado */
+}
+
+/* Hover para los enlaces de navegación */
+nav a:hover {
+    text-decoration: underline; /* Subrayado en hover */
+}
+
+/* Estilos para el contenido principal */
+main {
+    padding: 20px;
+}
+
+/* Estilo para la sección de productos */
+#productos {
+    padding: 20px;
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+/* Estilos del título de productos */
+h2 {
+    color: #333; /* Color oscuro para el título */
+    text-align: center; /* Centrado del título */
+}
+
+/* Estilo de la cuadrícula de productos */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Tres columnas */
+    gap: 20px; /* Espacio entre productos */
+}
+
+/* Estilos de cada producto */
+.product {
+    border: 1px solid #ddd; /* Borde sutil */
+    padding: 15px;
+    text-align: center; /* Centra el texto dentro de los productos */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves */
+}
+
+/* Hover en el producto: eleva ligeramente el producto y cambia la sombra */
+.product:hover {
+    transform: translateY(-5px); /* Efecto de desplazamiento hacia arriba */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra más profunda */
+}
+
+/* Estilos para las imágenes dentro de los productos */
+.product img {
+    width: 100%; /* Imagen de tamaño completo dentro del contenedor */
+    height: 250px; /* Establece una altura consistente para las imágenes */
+    object-fit: cover; /* Ajusta la imagen para cubrir el contenedor */
+    border-radius: 5px; /* Bordes redondeados para la imagen */
+}
+
+/* Estilos del nombre del producto */
+.product h3 {
+    color: #007bff; /* Color azul para el nombre */
+    margin: 10px 0; /* Margen arriba y abajo */
+    font-size: 18px; /* Tamaño del texto */
+}
+
+/* Estilos para el precio del producto */
+.product p {
+    color: #333; /* Color oscuro para el precio */
+    font-size: 16px; /* Tamaño de texto */
+}
+
+/* Estilos para el botón dentro de cada producto */
+button {
+    background-color: #007bff; /* Fondo azul para el botón */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 4px; /* Bordes redondeados */
+    transition: background-color 0.3s ease; /* Transición para el color de fondo */
+    margin-top: 10px; /* Espacio encima del botón */
+}
+
+/* Hover para el botón: cambia el color de fondo */
+button:hover {
+    background-color: #0056b3; /* Fondo más oscuro al pasar el ratón */
+}
+
+/* Estilos del pie de página */
+footer {
+    color: #333; /* Texto oscuro */
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave en el pie de página */
+    font-family: 'Poppins', sans-serif; /* Aplicando la fuente Poppins */
+}
+
+/* Contenido del pie de página */
+.footer-content {
+    display: flex; /* Usa flexbox para organizar los elementos */
+    justify-content: space-between; /* Espacio entre el lado izquierdo y derecho */
+    flex-wrap: wrap; /* Permite ajustar el contenido en pantallas pequeñas */
+}
+
+/* Estilos de las secciones del pie de página */
+.footer-left, .footer-right {
+    flex: 1; /* Toma el 50% del espacio disponible */
+    margin: 10px;
+}
+
+/* Títulos en el pie de página */
+.footer-left h4, .footer-right h4 {
+    margin-bottom: 10px;
+    color: #000000; /* Color gris claro para los títulos */
+    font-weight: 600; /* Hacer los títulos más destacados */
+}
+
+/* Estilos de las redes sociales */
+.social-media a {
+    margin: 0 10px;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    transition: text-decoration 0.3s ease; /* Transición para el subrayado */
+}
+
+/* Hover en los enlaces de redes sociales */
+.social-media a:hover {
+    text-decoration: underline; /* Subrayado al pasar el ratón */
+}
+
+/* Estilo de las listas en el pie de página */
+ul {
+    list-style-type: none; /* Quita las viñetas */
+    padding: 0;
+}
+
+ul li {
+    margin: 5px 0;
+}
+
+/* Enlaces en el pie de página */
+ul li a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    transition: text-decoration 0.3s ease;
+}
+
+/* Hover en los enlaces del pie de página */
+ul li a:hover {
+    text-decoration: underline; /* Subraya los enlaces al pasar el ratón */
+}

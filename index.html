@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>NerStep - Zapatillas del Futuro</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #121212, #1e1e1e);
+            font-family: 'Arial', sans-serif;
+            color: #e0e0e0;
+        }
+        .product-hero {
+            perspective: 1500px;
+            transform-style: preserve-2d;
+        }
+        .product-hero img {
+            transition: all 0.5s;
+            transform-style: preserve-3d;
+        }
+        .product-hero:hover img {
+            transform: rotateY(15deg) translateZ(50px);
+        }
+        .glitch-text {
+            position: relative;
+            text-shadow: 
+                0.05em 0 0 #00fffc,
+                -0.05em 0 0 #fc00ff,
+                0 0.05em 0 #fffc00,
+                0 -0.05em 0 #00ff00;
+            animation: glitch 1s infinite alternate;
+        }
+        @keyframes glitch {
+            0% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+            5% { clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 90%); }
+            10% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+            15% { clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%); }
+            20% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+        }
+    </style>
+</head>
+
+<body class="min-h-screen">
+    <div class="container mx-auto px-4">
+        <!-- Barra de Navegación -->
+        <nav class="flex justify-between items-center py-6">
+            <div class="text-3xl font-bold text-purple-400 glitch-text">NerStep</div>
+            <div class="flex items-center space-x-6">
+                <a href="...inicio.html" class="text-white hover:text-purple-400">Inicio</a>
+                <a href="catalogo.html" class="text-white hover:text-purple-400">Catálogo</a>
+                <a href="contacta.html" class="text-white hover:text-purple-400">Contáctanos</a>
+                <a href="Logistica.html" class="text-white hover:text-purple-400">Logistica</a>
+                <a href="Metodos.html" class="text-white hover:text-purple-400">Metodos de pago</a>
+                
+                <!-- Motor de búsqueda -->
+                <div class="relative flex items-center">
+                    <input type="text" id="search" class="bg-gray-800 text-white px-4 py-2 rounded-full focus:outline-none focus:ring-2 focus:ring-purple-400" placeholder="Buscar...">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white absolute right-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M17 10a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                </div>
+
+                <!-- Icono de Usuario -->
+                 <a href="registro.html">
+                <button class="bg-purple-600 p-3 rounded-full hover:bg-purple-700 transition-all">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                    </svg>
+                </button></a>
+
+                <!-- Icono de Carrito -->
+                <div class="relative">
+                    <button id="cart-toggle" class="bg-purple-600 p-3 rounded-full hover:bg-purple-700 transition-all">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                        </svg>
+                        <span id="cart-count" class="absolute -top-2 -right-2 bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs">0</span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Rest of the existing code remains the same -->
+        <!-- Modal de Carrito -->
+        <div id="cart-modal" class="fixed inset-0 bg-black bg-opacity-80 z-50 hidden flex items-center justify-center">
+            <!-- Existing cart modal content -->
+        </div>
+
+        <!-- Sección Hero Principal -->
+        <div class="grid md:grid-cols-2 items-center mt-12 gap-12">
+            <!-- Existing hero section content -->
+        </div>
+
+        <!-- Características del Producto -->
+        <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Existing product features content -->
+        </div>
+    </div>
+        <!-- Modal de Carrito -->
+        <div id="cart-modal" class="fixed inset-0 bg-black bg-opacity-80 z-50 hidden flex items-center justify-center">
+            <div class="bg-gray-800 p-8 rounded-lg w-3/4 max-w-4xl max-h-[80vh] overflow-y-auto">
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="text-3xl font-bold">Carrito de Compras</h2>
+                    <button id="close-cart" class="text-white hover:text-red-500 transition-all">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+                <div id="cart-items" class="grid gap-4"></div>
+                <div id="cart-total" class="mt-6 text-right text-2xl font-bold"></div>
+                <button id="checkout-btn" class="mt-4 w-full bg-purple-600 text-white p-3 rounded hover:bg-purple-700 transition-all">
+                    Proceder al Pago
+                </button>
+                <a href="pago.html"></a>
+            </div>
+        </div>
+
+        <!-- Sección Hero Principal -->
+        <div class="grid md:grid-cols-2 items-center mt-12 gap-12">
+            <div>
+                <h1 class="text-5xl font-bold mb-6">
+                    <span class="text-purple-400">NeuroPulse</span> - Zapatillas del Futuro
+                </h1>
+                <p class="text-xl text-gray-300 mb-8">
+                    Experimenta la tecnología de calzado más avanzada. Sensores neuronales integrados que se adaptan a cada movimiento.
+                </p>
+                
+                <div class="flex space-x-4">
+                    <button id="add-main-product" class="bg-purple-600 px-8 py-3 rounded-full hover:bg-purple-700 transition-all text-white add-to-cart" data-name="NeuroPulse Zapatillas" data-price="149.99">
+                        Agregar al Carrito
+                    </button>
+                    <button id="view-details-btn" class="border border-purple-400 px-8 py-3 rounded-full text-purple-400 hover:bg-purple-400 hover:text-white transition-all">
+                        Ver Detalles
+                    </button>
+                </div> 
+                <br><br><br><br>
+                <style>
+                    .offer-button {
+                        position: relative;
+                        padding: 15px 30px;
+                        font-size: 18px;
+                        background: linear-gradient(45deg, #000000, #370071);
+                        color: white;
+                        border: none;
+                        border-radius: 25px;
+                        cursor: pointer;
+                        overflow: hidden;
+                        transition: transform 0.3s, box-shadow 0.3s;
+                        animation: pulse 2s infinite;
+                    }
+            
+                    .offer-button:hover {
+                        transform: scale(1.05);
+                        box-shadow: 0 0 20px rgba(84, 0, 74, 0.5);
+                    }
+            
+                    .offer-button::before {
+                        content: '';
+                        position: absolute;
+                        top: -50%;
+                        left: -50%;
+                        width: 200%;
+                        height: 200%;
+                        background: rgba(255, 255, 255, 0.1);
+                        transform: rotate(45deg);
+                        animation: shine 3s infinite;
+                    }
+            
+                    .sparkle {
+                        position: absolute;
+                        background: white;
+                        width: 3px;
+                        height: 3px;
+                        border-radius: 50%;
+                        opacity: 0;
+                    }
+            
+                    @keyframes pulse {
+                        0% { transform: scale(1); }
+                        50% { transform: scale(1.05); }
+                        100% { transform: scale(1); }
+                    }
+            
+                    @keyframes shine {
+                        0% { transform: translateX(-100%) rotate(45deg); }
+                        100% { transform: translateX(100%) rotate(45deg); }
+                    }
+            
+                    @keyframes sparkle {
+                        0% { transform: scale(0); opacity: 0; }
+                        50% { transform: scale(1); opacity: 1; }
+                        100% { transform: scale(0); opacity: 0; }
+                    }
+                </style>
+            </head>
+            <body>
+                <button id="offerButton" class="offer-button">¡OFERTA NAVIDEÑA HASTA 50%!<br>DESCUENTO</button>
+            
+                <script>
+                    const button = document.getElementById('offerButton');
+            
+                    // Función para crear efectos de brillo
+                    function createSparkles() {
+                        for (let i = 0; i < 5; i++) {
+                            const sparkle = document.createElement('div');
+                            sparkle.className = 'sparkle';
+                            
+                            // Posición aleatoria alrededor del botón
+                            const x = Math.random() * 100;
+                            const y = Math.random() * 100;
+                            
+                            sparkle.style.left = x + '%';
+                            sparkle.style.top = y + '%';
+                            sparkle.style.animation = `sparkle 1s ease-in-out ${Math.random() * 1}s`;
+                            
+                            button.appendChild(sparkle);
+                            
+                            // Eliminar el brillo después de la animación
+                            setTimeout(() => {
+                                sparkle.remove();
+                            }, 1000);
+                        }
+                    }
+            
+                    // Efecto de hover avanzado
+                    button.addEventListener('mouseover', () => {
+                        createSparkles();
+                        button.style.transform = 'scale(1.1)';
+                    });
+            
+                    button.addEventListener('mouseout', () => {
+                        button.style.transform = 'scale(1)';
+                    });
+            
+                    // Efecto de clic
+                    button.addEventListener('click', () => {
+                        button.style.transform = 'scale(0.95)';
+                        setTimeout(() => {
+                            button.style.transform = 'scale(1)';
+                        }, 100);
+                        createSparkles();
+                    });
+            
+                    // Crear brillos periódicamente
+                    setInterval(createSparkles, 3000);
+                </script>
+                
+            </div>
+            
+            <div class="product-hero">
+                <img class="" src="imagen/adi2000.jpg" alt="Zapatillas NeuroPulse">
+            </div>
+        </div>
+
+        <!-- Características del Producto -->
+        <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-gray-800 p-4 rounded-lg text-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-20 w-12 mx-auto text-purple-400 mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806A3.42 3.42 0 017.835 4.697z" />
+                </svg>
+                <h3 class="text-xl font-bold text-white">Confort Inigualable</h3>
+                <p class="text-gray-400 mt-2">Tecnología que adapta las zapatillas a la forma de tu pie.</p>
+            </div>
+
+            <div class="bg-gray-800 p-4 rounded-lg text-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-20 w-12 mx-auto text-purple-400 mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10l4 4-4 4M15 10l4 4-4 4M9 10l4 4-4 4" />
+                </svg>
+                <h3 class="text-xl font-bold text-white">Resistencia Premium</h3>
+                <p class="text-gray-400 mt-2">Diseño resistente para todo tipo de terreno.</p>
+            </div>
+
+            <div class="bg-gray-800 p-4 rounded-lg text-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-20 w-12 mx-auto text-purple-400 mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 15V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2h14a2 2 0 002-2zM21 15a2 2 0 01-2 2H5a2 2 0 01-2-2M12 2v10" />
+                </svg>
+                <h3 class="text-xl font-bold text-white">Cargar Rápida</h3>
+                <p class="text-gray-400 mt-2">Carga inalámbrica optimizada para una mayor duración.</p>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
